@@ -9,9 +9,9 @@
         Ola {{usuario.funcionario.nome}}
 
         {% if usuario.funcionario.empresa %}
-            <a href="">Editar Empresa</a>
+            <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
         {% else %} 
-            <a href="">Criar Empresa</a>
+            <a href="{% url 'create_empresa' %}">Criar Empresa</a>
         {% endif %}
     </div>
     <div class="col-sm">
