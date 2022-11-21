@@ -8,3 +8,7 @@ class FuncionariosList(ListView):
         empresa_logada = self.request.user.funcionario.empresa
         queryset = Funcionario.objects.filter(empresa=empresa_logada)
         return queryset
+
+class FuncionariosUpdate(UpdateView):
+    model = Funcionario
+    fields = ['nome', 'departamento']
