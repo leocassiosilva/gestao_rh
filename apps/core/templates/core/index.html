@@ -3,11 +3,10 @@
 {% block main %}
 <div class="row">
     <div class="col-sm">
-        ...
+        Ola {{usuario.funcionario.nome}}
+        <a href="{% url 'list_funcionario' %}">Gerenciar Funcionarios</a>
     </div>
     <div class="col-sm">
-        Ola {{usuario.funcionario.nome}}
-
         {% if usuario.funcionario.empresa %}
             <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
         {% else %} 
