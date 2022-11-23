@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+List Departamentos
+<br/>
+{% for departamento in object_list %}
+    <a href="#">
+        {{ departamento }}
+    </a>
+    <a href="#">
+        Deletar
+    </a>
+{% endfor %}
+<a href="{% url 'create_departamento' %}">
+    Criar Funcionario
+</a>
+
+{% endblock %}
