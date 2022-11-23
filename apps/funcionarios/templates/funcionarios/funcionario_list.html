@@ -8,7 +8,12 @@ List
     <a href="{% url 'update_funcionario' funcionarios.id %}">
         {{funcionarios }}
     </a>
+    <a href="{% url 'delete_funcionario' funcionarios.id%}">
+        Deletar
+    </a>
 {% endfor %}
-
+<a href="{% url 'create_funcionario' %}">
+    Criar Funcionario
+</a>
 
 {% endblock %}
