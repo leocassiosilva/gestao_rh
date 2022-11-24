@@ -5,15 +5,15 @@
 List Departamentos
 <br/>
 {% for departamento in object_list %}
-    <a href="#">
+    <a href="{% url 'update_departamento' departamento.id %}">
         {{ departamento }}
     </a>
-    <a href="#">
+    <a href="{% url 'delete_departamento' departamento.id %}">
         Deletar
     </a>
 {% endfor %}
 <a href="{% url 'create_departamento' %}">
-    Criar Funcionario
+    Criar Departamento
 </a>
 
 {% endblock %}

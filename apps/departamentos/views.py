@@ -17,11 +17,23 @@ class DepartamentoCreate(CreateView):
     model = Departamento
     fields = ['nome']
 
-    def get_absolute_url(self):
-        return reverse('list_departamentos')
+    # def get_absolute_url(self):
+    #     return reverse('list_departamentos')
 
     def form_valid(self, form):
         departamento = form.save(commit=False)
         departamento.empresa = self.request.user.funcionario.empresa
         departamento.save()
-        return super(DepartamentoCreate, self.form_valid(form))
+        return super(DepartamentoCreate, self).form_valid(form)
+
+class DepartamentoUpdate(UpdateView):
+    model  = Departamento
+    fields = ['nome']  
+    
+    def get_success_url(self):
+        return reverse('list_departamentos')
+
+class DepartamentoDelete(DeleteView):
+    model = Departamento
+    success_url = reverse_lazy('list_departamentos')
+
