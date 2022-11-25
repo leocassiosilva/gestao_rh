@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+{{ form.errors }}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button type="submit">Adicionar</button>
+</form>
+{% endblock %}

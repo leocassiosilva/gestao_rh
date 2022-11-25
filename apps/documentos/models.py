@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse_lazy,reverse
 from apps.funcionarios.models import Funcionario
 
 class Documento(models.Model):
@@ -7,5 +7,8 @@ class Documento(models.Model):
     pertence = models.ForeignKey(Funcionario, on_delete=models.PROTECT, null=True, blank=True)
     arquivo = models.FileField(upload_to='documentos')
     
+    def get_absolute_url(self):
+        return reverse('update_funcionario', args=[self.pertence.id])
+ 
     def __str__(self):
         return self.descricao
