@@ -5,6 +5,7 @@
     <div class="col-sm">
         Ola {{usuario.funcionario.nome}}
         <a href="{% url 'list_funcionario' %}">Gerenciar Funcionarios</a>
+        <a href="{% url 'list_hora_extra' %}">Registro de Hora Extra</a>
     </div>
     <div class="col-sm">
         {% if usuario.funcionario.empresa %}
